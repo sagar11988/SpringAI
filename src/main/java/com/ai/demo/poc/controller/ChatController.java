@@ -1,4 +1,4 @@
-package com.dailycodebuffer.budget_ai.controller;
+package com.ai.demo.poc.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
@@ -9,32 +9,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BudgetController {
+public class ChatController {
 
     private ChatClient chatClient;
 
-    public BudgetController(ChatClient.Builder builder,
-                            VectorStore vectorStore) {
+    public ChatController(ChatClient.Builder builder,
+                          VectorStore vectorStore) {
         this.chatClient = builder
                 .defaultAdvisors(new QuestionAnswerAdvisor(vectorStore,
                         SearchRequest.defaults()))
                 .build();
     }
 
-    @GetMapping("/budget")
-    public String budgetQandA(@RequestParam(value = "message",
-    defaultValue = "What is the Highlight of the Budget 2024-25")
-                              String message) {
-            return chatClient
-                    .prompt()
-                    .user(message)
-                    .call()
-                    .content();
-    }
 
-    @GetMapping("/defects")
-    public String defectQandA(@RequestParam(value = "message",
-            defaultValue = "What are the priority defects")
+    @GetMapping("/askQuestion")
+    public String askQuestion(@RequestParam(value = "message",
+            defaultValue = "tell me joke")
                               String message) {
         return chatClient
                 .prompt()

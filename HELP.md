@@ -1,8 +1,6 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.dailycodebuffer.budget-ai' is invalid and this project uses 'com.dailycodebuffer.budget_ai' instead.
-
 # Getting Started
 
 ### Reference Documentation

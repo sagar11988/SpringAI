@@ -1,13 +1,13 @@
-package com.dailycodebuffer.budget_ai;
+package com.ai.demo.poc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BudgetAiApplication {
+public class ChatAiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BudgetAiApplication.class, args);
+		SpringApplication.run(ChatAiApplication.class, args);
 	}
 
 }
